@@ -1,72 +1,44 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/-Un0hjO8)
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=11285012)
-# Project name
+# TDD Mockito WeatherService
 
 ## Description
-
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+JUnit tests for WeatherService using Mockito to mock a API call.
 
 ## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Built with IntelliJ. maven and Java 19. Maven will download all dependencies.
 
 ## Usage
-
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Run the tests in the test folder weather package.
 
 ## Credits
+Third party assets
+* [junit jupiter 5](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter/)
+* [mockito core](https://mvnrepository.com/artifact/org.mockito/mockito-core/)
+* [json](https://mvnrepository.com/artifact/org.json/json/)
+* [jackson core](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core)
 
-List your collaborators, if any, with links to their GitHub profiles.
-* [member 1](https://github.com/person1)
-* [member 2](https://github.com/person1)
+* [ChatGPT](https://chat.openai.com/) for the formatting of a .md-table
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-* [junit jupiter 5](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter/5.7.0)
+## Test report
+JDK 19, Junit 5.9.3, Mockito 5.3.1, Maven 4.0.0,
+IntelliJ 2023.1.2 (Ultimate Edition)
 
-If you followed tutorials, include links to those here as well.
+| Test ID | Description                                        | Test Method           | Test Data      | Expected Result                          | Actual Result                            | Pass/Fail |
+|---------|----------------------------------------------------|-----------------------|----------------|------------------------------------------|------------------------------------------|-----------|
+| 1       | Get weather data for valid city                    | getWeatherValidCity   | "Gothenburg"   | Weather object with correct data         | Weather object with correct data         | <span style="color:green">Pass</span>       |
+| 2       | Get coordinates for valid city                     | getCoordValidCity     | "Gothenburg"   | Coordinates object with correct data     | Coordinates object with correct data     | <span style="color:green">Pass</span>       |
+| 3       | Get weather data for invalid city                  | getWeatherInvalidCity | "Narnia"       | Throws exception                         | Throws exception                         | <span style="color:green">Pass</span>       |
+| 4       | Get coordinates for invalid city                   | getCoordInvalidCity   | "Narnia"       | Throws exception                         | Throws exception                         | <span style="color:green">Pass</span>       |
+| 5       | Get weather data for city with special characters  | getWeatherSpecialCity | "Göteborg"     | Weather object with correct data         | Weather object with correct data         | <span style="color:green">Pass</span>       |
+| 6       | Get coordinates for city with special characters   | getCoordSpecialCity   | "Göteborg"     | Coordinates object with correct data     | Coordinates object with correct data     | <span style="color:green">Pass</span>       |
+| 7       | Get weather data with empty string                 | getWeatherEmptyString | ""             | Throws exception                         | Throws exception                         | <span style="color:green">Pass</span>       |
+| 8       | Get coordinates with empty string                  | getCoordEmptyString   | ""             | Throws exception                         | Throws exception                         | <span style="color:green">Pass</span>       |
+| 9       | Get weather data with null                         | getWeatherNull        | null           | Throws exception                         | Throws exception                         | <span style="color:green">Pass</span>       |
+| 10      | Get coordinates with null                          | getCoordNull          | null           | Throws exception                         | Throws exception                         | <span style="color:green">Pass</span>       |
+| 11      | Get weather data within 2 seconds                  | getWeatherTimeout     | "Gothenburg"   | Weather object with correct data         | Weather object with correct data         | <span style="color:green">Pass</span>       |
 
-## License
+### Test results
+All tests passed. 
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [MIT License](https://choosealicense.com/licenses/mit/).
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Features
-
-If your project has a lot of features, list them here.
-
-## How to Contribute
-
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+Note: Tests performed with Mockito used to mock the API call (JSONGetter dependency). The API call is not tested.
