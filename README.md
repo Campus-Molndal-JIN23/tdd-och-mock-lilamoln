@@ -42,3 +42,8 @@ IntelliJ 2023.1.2 (Ultimate Edition)
 All tests passed. 
 
 Note: Tests performed with Mockito used to mock the API call (JSONGetter dependency). The API call is not tested.
+
+## TDD & mock 
+Tdd är en metod där test till koden skrivs före koden. Detta gör att en kan vara säker på att koden uppfyller de krav som finns på koden (så länge testerna är skrivna såpass omfattande att de svarar upp mot kraven på koden).
+
+Mocking i tester är bra för att avlasta externa resurser vid testning. Det gör att man kan frikoppla kodens beroenden av exempelvis API:er, databaser eller andra resurser. Dels som sagt för att avlasta (t.ex. API:er), inte pajja grejer man inte borde röra (databaser) och säkerställa att fel inte finns i den egna koden - ligger felet externt får man lösa det på något annat vis men då vet man att den "egna" koden fungerar i alla fall.
