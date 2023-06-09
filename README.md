@@ -17,5 +17,6 @@ Third party assets
 * [mockito core](https://mvnrepository.com/artifact/org.mockito/mockito-core/)
 * [json](https://mvnrepository.com/artifact/org.json/json/)
 * [jackson core](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core)
+* [JSONtoPOJO](https://json2csharp.com/code-converters/json-to-pojo)
 
 * [ChatGPT](https://chat.openai.com/) for the formatting of a .md-table
