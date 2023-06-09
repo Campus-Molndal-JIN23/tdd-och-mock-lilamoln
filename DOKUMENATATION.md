@@ -35,7 +35,7 @@ Mocking i tester är bra för att avlasta externa resurser vid testning. Det gö
 ## Arbetet och dess genomförande
 
 ### Vad som varit svårt
-Att hantera JSON är alltid lite stökigt, men [JSONtoPOJO](https://json2csharp.com/code-converters/json-to-pojo) och [Jackson](https://github.com/FasterXML/jackson) är grymt.
+Att hantera JSON är alltid lite stökigt, men [JSONtoPOJO](https://json2csharp.com/code-converters/json-to-pojo) och [Jackson](https://github.com/FasterXML/jackson) är grymt. Att formatera en tabell i markdown var inte heller svinlätt, fick hjälp av ChatGPT med det.
 
 ### Beskriv lite olika lösningar du gjort
 Se ovan, JSON genom Jackson blir en DAO som kan skickas vidare och plockas ur data ur.
